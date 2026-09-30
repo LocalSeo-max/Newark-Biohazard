@@ -1,0 +1,45 @@
+HOW TO ADD A NEW BLOG POST (2 simple steps)
+============================================
+
+You do NOT edit the homepage or the rest of the site.
+
+STEP 1 — Create the post page
+-----------------------------
+1. Copy the folder:  blog/_template/
+2. Rename the copy to your URL slug, example:
+     blog/my-new-post-title/
+3. Open:  blog/my-new-post-title/index.html
+4. Replace these placeholders:
+     REPLACE_WITH_TITLE
+     REPLACE_WITH_META_DESCRIPTION
+     REPLACE_WITH_SLUG
+     REPLACE_WITH_H1
+     and update the date + write your article body
+
+STEP 2 — Add it to the listing (edit posts.json only)
+-----------------------------------------------------
+Open:  blog/posts.json
+
+Add this block at the TOP of the array (after the first [ ):
+
+  {
+    "slug": "my-new-post-title",
+    "title": "Your Full Post Title Here",
+    "tag": "Insurance",
+    "date": "2026-10-15",
+    "excerpt": "One or two sentences shown on the blog listing page."
+  },
+
+Rules:
+- "slug" must match the folder name exactly
+- "date" format: YYYY-MM-DD (newest appears first automatically)
+- Use double quotes
+- Put a comma after the object if more posts follow
+
+STEP 3 — Deploy
+---------------
+Upload/push to Cloudflare Pages.
+The blog page loads posts.json automatically.
+You never need to edit blog/index.html.
+
+OPTIONAL: add URL to sitemap.xml for faster Google discovery.

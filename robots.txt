@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biohazardcleanupnewark.com/sitemap.xml

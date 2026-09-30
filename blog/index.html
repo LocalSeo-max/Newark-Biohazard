@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Biohazard Cleanup Guides for Newark NJ</title>
+<meta name="description" content="Expert guides on biohazard cleanup, crime scene remediation, insurance, unattended death, hoarding, and more for Newark residents and property managers.">
+<link rel="canonical" href="https://biohazardcleanupnewark.com/blog/">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="top-bar"><div class="container"><span>24/7 Emergency Connection</span><a href="tel:+12456782882" class="top-phone">Call Now: (245) 678-2882</a></div></div>
+<header class="header"><div class="container header-inner">
+<a href="/" class="logo"><img src="/images/logo.svg" alt="Logo" width="40" height="40"><div><strong>Newark Biohazard</strong><small>Cleanup &amp; Remediation</small></div></a>
+<nav class="nav" id="mainNav">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/services/" class="dd-toggle">Services ▾</a>
+          <div class="dropdown wide">
+            <div class="dd-col">
+              <a href="/crime-scene-cleanup/">Crime Scene Cleanup</a>
+              <a href="/trauma-scene-cleanup/">Trauma Scene Cleanup</a>
+              <a href="/blood-cleanup/">Blood Cleanup</a>
+              <a href="/unattended-death-cleanup/">Unattended Death Cleanup</a>
+              <a href="/suicide-cleanup/">Suicide Cleanup</a>
+              <a href="/hoarding-cleanup/">Hoarding Cleanup</a>
+              <a href="/emergency-biohazard-cleanup/">Emergency Biohazard Cleanup</a>
+            </div>
+            <div class="dd-col">
+              <a href="/services/"><strong>View All Services →</strong></a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/areas/" class="dd-toggle">Areas ▾</a>
+          <div class="dropdown wide">
+            <div class="dd-col">
+              <a href="/ironbound/">Ironbound</a>
+              <a href="/downtown-newark/">Downtown Newark</a>
+              <a href="/forest-hill/">Forest Hill</a>
+              <a href="/weequahic/">Weequahic</a>
+              <a href="/vailsburg/">Vailsburg</a>
+              <a href="/university-heights/">University Heights</a>
+              <a href="/areas/"><strong>View All Areas →</strong></a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+<a href="tel:+12456782882" class="btn btn-emergency">Call Now – 24/7 Emergency</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+</div></header>
+<section class="page-hero"><div class="container"><h1>Biohazard Cleanup Blog</h1><p>Practical guides for Newark families, landlords, and property managers.</p></div></section>
+<section class="section"><div class="container">
+<div class="blog-grid" id="blogGrid"><p style="color:#555">Loading posts…</p></div>
+</div></section>
+<section class="cta-banner"><div class="container"><h2>Need Help Now?</h2><a href="tel:+12456782882" class="btn btn-primary btn-lg">Call Now – 24/7 Emergency</a></div></section>
+<footer class="footer"><div class="container footer-grid">
+<div class="footer-col"><h4>Newark Biohazard Cleanup &amp; Remediation</h4><p class="footer-phone"><a href="tel:+12456782882">(245) 678-2882</a></p></div>
+<div class="footer-col"><h4>Services</h4><ul><li><a href="/services/">All Services</a></li></ul></div>
+<div class="footer-col"><h4>Areas</h4><ul><li><a href="/areas/">All Areas</a></li></ul></div>
+<div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+</div>
+<div class="footer-bottom"><div class="container"><p>&copy; 2026 Newark Biohazard Cleanup &amp; Remediation.</p></div></div>
+</footer>
+<div class="sticky-call"><a href="tel:+12456782882">Call Now – 24/7 · (245) 678-2882</a></div>
+<script src="/js/main.js"></script>
+<script>
+fetch('/blog/posts.json')
+  .then(function(r){ return r.json(); })
+  .then(function(posts){
+    var grid = document.getElementById('blogGrid');
+    if(!posts || !posts.length){ grid.innerHTML = '<p>No posts yet.</p>'; return; }
+    posts.sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
+    grid.innerHTML = posts.map(function(p){
+      return '<article class="blog-card">' +
+        '<div class="blog-meta"><span class="blog-tag">' + (p.tag||'Guide') + '</span><time datetime="' + p.date + '">' + p.date + '</time></div>' +
+        '<h2><a href="/blog/' + p.slug + '/">' + p.title + '</a></h2>' +
+        '<p>' + (p.excerpt||'') + '</p>' +
+        '<a href="/blog/' + p.slug + '/" class="read-more">Read more →</a>' +
+        '</article>';
+    }).join('');
+  })
+  .catch(function(){
+    document.getElementById('blogGrid').innerHTML = '<p>Unable to load posts. Please refresh.</p>';
+  });
+</script>
+</body>
+</html>
