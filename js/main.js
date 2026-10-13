@@ -19,6 +19,6 @@ function handleForm(e){
   e.preventDefault();
   var name=document.getElementById('name'),phone=document.getElementById('phone');
   if(!name||!phone||!name.value||!phone.value){alert('Please enter your name and phone number.');return false;}
-  alert('Thank you, '+name.value+'. We received your request and will call you shortly at '+phone.value+'.\n\nFor immediate help, call (245) 678-2882 now.');
+  alert('Thank you, '+name.value+'. We received your request and will call you shortly at '+phone.value+'.\n\nFor immediate help, call (973) 938-8561 now.');
   e.target.reset();return false;
 }
