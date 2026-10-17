@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,7 +157,7 @@
       <div class="contact-form-wrap">
         <h2>Request a Callback</h2>
         <p>For non-emergency requests, leave your details and we will return your call.</p>
-        <form class="contact-form" onsubmit="return handleForm(event)">
+        <form class="contact-form" action="https://formspree.io/f/xppqbwzl" method="POST">
           <div class="form-group"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
           <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required></div>
           <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"></div>
